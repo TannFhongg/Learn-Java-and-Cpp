@@ -17,3 +17,12 @@ Compare POP(Procedure Oriented Programing) vs OOP (Object Oriented Programing)
 +OOP : Dữ liệu và hàm được đóng gói trong đối tượng. 
 
 Access Modifier / Access Modes
+
+| Từ khóa          | Trong class | Trong package | Class con            | Bên ngoài |
+| ---------------- | ----------- | ------------- | -------------------- | --------- |
+| `public`         | ✅           | ✅             | ✅                    | ✅         |
+| `protected`      | ✅           | ✅             | ✅                    | ❌         |
+| *default* (Java) | ✅           | ✅             | ❌ (nếu khác package) | ❌         |
+| `private`        | ✅           | ❌             | ❌                    | ❌         |
+
+
