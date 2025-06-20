@@ -16,3 +16,4 @@ Compare POP(Procedure Oriented Programing) vs OOP (Object Oriented Programing)
 +POP : Dữ liệu và hàm tách biệt. 
 +OOP : Dữ liệu và hàm được đóng gói trong đối tượng. 
 
+Access Modifier / Access Modes
