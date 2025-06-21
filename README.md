@@ -26,3 +26,12 @@ Access Modifier / Access Modes
 | `private`        | ✅           | ❌             | ❌                    | ❌         |
 
 
+ Tóm tắt so sánh pass-by-value và pass-by-reference giữa C++ và Java
+
+ | Tiêu chí                      | **Java**                             | **C++**                                       |
+| ----------------------------- | ------------------------------------ | --------------------------------------------- |
+| Truyền giá trị (value)        | ✔️ Có (`int`, `double`, ...)         | ✔️ Có (`int`, `double`, ...)                  |
+| Truyền tham chiếu (reference) | ❌ Không hỗ trợ thật sự               | ✔️ Có (dùng `&` để truyền tham chiếu)         |
+| Truyền đối tượng              | ✔️ Truyền bản sao của **tham chiếu** | ✔️ Truyền bản sao hoặc **tham chiếu thực sự** |
+| Gán lại đối tượng trong hàm   | ❌ Không ảnh hưởng biến gốc           | ✔️ Có thể thay đổi nếu dùng tham chiếu        |
+| Sửa thuộc tính của đối tượng  | ✔️ Được (vì cùng trỏ đến object gốc) | ✔️ Được                                       |
