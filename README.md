@@ -35,3 +35,10 @@ Access Modifier / Access Modes
 | Truyền đối tượng              | ✔️ Truyền bản sao của **tham chiếu** | ✔️ Truyền bản sao hoặc **tham chiếu thực sự** |
 | Gán lại đối tượng trong hàm   | ❌ Không ảnh hưởng biến gốc           | ✔️ Có thể thay đổi nếu dùng tham chiếu        |
 | Sửa thuộc tính của đối tượng  | ✔️ Được (vì cùng trỏ đến object gốc) | ✔️ Được                                       |
+
+| Loại đa hình     | Đặc điểm                                        |
+| ---------------- | ----------------------------------------------- |
+| Compile-time     | Nạp chồng hàm/toán tử, quyết định khi biên dịch |
+| Run-time         | Dựa vào virtual + con trỏ/tham chiếu lớp cha    |
+| Cần `virtual`?   | Có, để đảm bảo runtime gọi đúng hàm ghi đè      |
+| Dùng `override`? | Có, để kiểm tra đúng việc ghi đè                |
