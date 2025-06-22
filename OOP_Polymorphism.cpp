@@ -60,7 +60,15 @@ public:
 
 int main() {
 Animal* a = new Dog(); 
-makeSound(a); // a ->sound(); 
+makeSound(a) ; // a ->sound(); 
+
+
+Dog d; 
+Animal& b = d;
+b.sound();
+
+
+
 
 
     Shape* s1 = new Circle();
