@@ -2,7 +2,7 @@
 using namespace std;
 
 class Person {
-private:
+protected:
     string name;
     int age;
 
@@ -17,7 +17,7 @@ public:
 };
 
 class Student : public Person {
-private:
+protected:
     string id;
     double gpa;
 
@@ -26,13 +26,8 @@ public:
         : Person(name, age), id(id), gpa(gpa) {}
     Student() {}
 
-    string getId() const { return id; }
-    void setId(string id) { this->id = id; }
-    double getGpa() const { return gpa; }
-    void setGpa(double gpa) { this->gpa = gpa; }
-
     virtual void display() const {
-        cout << id << " " << getName() << " " << getAge() << " " << gpa << endl;
+        cout << id << " " << name << " " << age << " " << gpa << endl;
     }
 
     virtual ~Student() {}
@@ -46,23 +41,47 @@ public:
     HocSinhHocBong(string id, string name, int age, double gpa, double tienThuong)
         : Student(id, name, age, gpa), tienThuong(tienThuong) {}
 
-    void setTienThuong(double tienThuong) { this->tienThuong = tienThuong; }
-    double getTienThuong() const { return tienThuong; }
-
-    bool duocHocBong() const {
-        return getGpa() > 3.5;
-    }
-
     void display() const override {
         Student::display();
-        if (duocHocBong()) {
+        if (gpa > 3.5)
             cout << " --> Duoc hoc bong: " << tienThuong << " VND\n";
-        } else {
+        else
             cout << " --> Khong duoc hoc bong\n";
+    }
+};
+
+// 🎯 DESIGN PATTERN: Factory Method
+class StudentFactory {
+public:
+    static Student* createStudent() {
+        string id, name;
+        int age;
+        double gpa;
+
+        cout << "Nhap ID: ";
+        getline(cin, id);
+        cout << "Nhap ten: ";
+        getline(cin, name);
+        cout << "Nhap tuoi: ";
+        cin >> age;
+        cout << "Nhap GPA: ";
+        cin >> gpa;
+
+        cin.ignore();
+
+        if (gpa > 3.5) {
+            double thuong;
+            cout << "Nhap so tien thuong: ";
+            cin >> thuong;
+            cin.ignore();
+            return new HocSinhHocBong(id, name, age, gpa, thuong);
+        } else {
+            return new Student(id, name, age, gpa);
         }
     }
 };
 
+// 🎯 DESIGN PATTERN: Strategy-like Interface
 class AbstractManager {
 public:
     virtual void addStudent(Student* s) = 0;
@@ -86,9 +105,7 @@ public:
     }
 
     ~ManagerStudent() {
-        for (Student* s : ls) {
-            delete s;
-        }
+        for (Student* s : ls) delete s;
     }
 };
 
@@ -101,35 +118,12 @@ int main() {
     cin.ignore();
 
     for (int i = 0; i < n; i++) {
-        string id, name;
-        int age;
-        double gpa;
-
-        cout << "Nhap ID: ";
-        getline(cin, id);
-
-        cout << "Nhap ten: ";
-        getline(cin, name);
-
-        cout << "Nhap tuoi: ";
-        cin >> age;
-
-        cout << "Nhap GPA: ";
-        cin >> gpa;
-
-        double thuong = 0;
-        if (gpa > 3.5) {
-            cout << "Nhap so tien thuong: ";
-            cin >> thuong;
-            cin.ignore();
-            st.addStudent(new HocSinhHocBong(id, name, age, gpa, thuong));
-        } else {
-            cin.ignore();
-            st.addStudent(new Student(id, name, age, gpa));
-        }
+        Student* s = StudentFactory::createStudent();
+        st.addStudent(s);
     }
 
-    cout << "Student of List: ";
+    cout << "\n List of student: \n";
     st.displayAll();
+
     return 0;
 }
