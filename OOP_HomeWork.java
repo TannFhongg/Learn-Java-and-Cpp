@@ -106,7 +106,9 @@ public void findById(String id) {
     }
     System.out.println("Cant not find student with id: " + id);
 }
-
+public void sortGPA() {
+    list.sort((a,b) -> Double.compare(b.getGPA() , a.getGPA()));
+}
 }
 class HocSinhHocBong extends HocSinh {
     private double soTien ;
@@ -163,7 +165,7 @@ public class OOP_HomeWork {
                 sm.addStudent(new HocSinh(id, name, age, gpa));
             }
         }
-
+        sm.sortGPA();
         System.out.println("\n=== List of student ===");
         sm.displayAll();
 
