@@ -50,7 +50,7 @@ public:
     }
 };
 
-// 🎯 DESIGN PATTERN: Factory Method
+//  DESIGN PATTERN: Factory Method
 class StudentFactory {
 public:
     static Student* createStudent() {
