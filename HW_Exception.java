@@ -1,14 +1,15 @@
-// Java chia th�nh:
 
-// Checked Exception (bi?t tr??c, b?t bu?c ph?i x? l�)
+// Java chia thành:
 
-// Unchecked Exception (runtime exception, kh�ng b?t bu?c x? l�)
+// Checked Exception (biết trước, bắt buộc phải xử lý)
+
+// Unchecked Exception (runtime exception, không bắt buộc xử lý)
 /* 
 
-| Lo?i      | K? th?a t?         | B?t bu?c x? l� | V� d?                                     |
+| Loại      | Kế thừa từ         | Bắt buộc xử lý | Ví dụ                                     |
 | --------- | ------------------ | -------------- | ----------------------------------------- |
-| Checked   | `Exception`        | ?              | IOException, SQLException                 |
-| Unchecked | `RuntimeException` | ?              | NullPointerException, ArithmeticException |
+| Checked   | `Exception`        | ✅              | IOException, SQLException                 |
+| Unchecked | `RuntimeException` | ❌              | NullPointerException, ArithmeticException |
 
  */
 
@@ -25,19 +26,18 @@ public class HW_Exception {
 
     /*
      * throw vs throws
-     * throw: d�ng ?? n�m ra ngo?i l?.
+     * throw: dùng để ném ra ngoại lệ.
      * 
-     * throws: d�ng trong khai b�o ph??ng th?c, cho bi?t c� th? n�m ngo?i l? n�o.
+     * throws: dùng trong khai báo phương thức, cho biết có thể ném ngoại lệ nào.
      */
 
     static void invalid(String name,int age) throws MyException {
-        if(name == null || name.trim().isEmpty()) {
-            throw new MyException("Name is empty");
-        }
         if (age < 0 || age < 18) {
             throw new MyException("You are not an adult");
         }
-
+        if(name == null || name.trim().isEmpty()) {
+            throw new MyException("Name is empty");
+        }
     }
  
     public static void main(String[] args) {
