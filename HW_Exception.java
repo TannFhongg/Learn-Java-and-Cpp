@@ -39,7 +39,11 @@ public class HW_Exception {
             throw new MyException("Name is empty");
         }
     }
- 
+    static void checkAge(int age) throws MyException {
+        if(age < 0 || age < 18) {
+            throw new MyException("You are not an adult");
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your name: ");
