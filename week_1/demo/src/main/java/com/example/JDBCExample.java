@@ -1,5 +1,6 @@
 package com.example;
 import java.sql.*;
+import java.util.Scanner;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -19,9 +20,16 @@ public class JDBCExample {
             // 3. Thực thi câu lệnh
             String sql = "INSERT INTO users(name, email) VALUES (?, ?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString( 1,"Tuan");
-            stmt.setString(2, "tuan@example.com");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Nhập tên: ");
+            String name = scanner.nextLine();
+            
+            System.out.println("Nhập email: ");
+            String email = scanner.nextLine();
 
+            stmt.setString( 1,name);
+            stmt.setString(2, email);
+            scanner.close();
             int rows = stmt.executeUpdate();
             if (rows > 0) {
                 System.out.println("Thêm thành công!");
