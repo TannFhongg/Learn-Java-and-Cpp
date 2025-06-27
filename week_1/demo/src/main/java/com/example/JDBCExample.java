@@ -2,9 +2,8 @@ package com.example;
 import java.sql.*;
 import java.util.Scanner;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+
 public class JDBCExample {   
     public static void main(String[] args) {
         // 1. Cấu hình kết nối
