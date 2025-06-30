@@ -1,6 +1,7 @@
 Bean 
 
 Những obj được tạo và quản lí bởi Spring IoC Container được gọi là Bean. 
+
 ---------------------------------------------------------------------------
 Cách tạo bean 
 1. Dùng @Component : @Repository @Service,@Controller
@@ -11,6 +12,7 @@ Cách tạo bean
 là 1 annotation đánh dấu trên 1 class,cho biết rằng class đó chứa các thông tin cấu hình cho ứng dụng 
 
 Spring Boot sẽ tìm và quét các class được đánh dấu @Configuration để tạo và quản lí các bean  
+
 -------------------------------------------------------------------------------------------
 @Bean 
 là 1 annotation đánh dấu trên 1 method trong class được đánh dấu @Configuration.Nó cho biết rằng method đó tạo và trả về bằng bean, và Spring boot nên quản lí bean đó trong ứng dụng.
