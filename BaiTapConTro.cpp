@@ -63,6 +63,17 @@ int timMin(int *arr, int n) {
     return min;
 }
 
+int timMin2(int *arr,int n) {
+    int min = *arr; 
+    int *end = arr + n; 
+    arr++; 
+    for(;arr < end;arr++) { 
+        if(*arr < min) {
+            min = *arr; 
+        }
+    }
+    return min; 
+}
 
 double tinhTrungBinh(int *arr, int n) {
     int sum = 0;
