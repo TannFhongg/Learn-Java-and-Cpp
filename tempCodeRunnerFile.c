@@ -1,2 +1,0 @@
-
-sumArr(arr,n); 
