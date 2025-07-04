@@ -22,7 +22,7 @@ void printStudent(Student s) {
 }
 
 void changeGPA(Student* s) {
-    s->gpa = 4.0;
+    s->gpa = 4.0; // = (*s).gpa; 
 }
 
 int main() {
@@ -33,5 +33,6 @@ int main() {
     s->display();           // in thông tin sau khi thay đổi
 
     delete s;
-    return 0;
+    return 0; 
+    
 }
