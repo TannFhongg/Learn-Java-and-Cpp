@@ -22,3 +22,4 @@ So sánh Mảng tĩnh vầ mảng động
 | Bộ nhớ              | Stack                   | Stack            | Heap                     |
 | Tự động giải phóng  | ✅ Có                    | ✅ Có             | ❌ Phải `free()`          |
 | Dùng ngoài hàm      | ✅ Có                    | ❌ Không          | ✅ Có                     |
+

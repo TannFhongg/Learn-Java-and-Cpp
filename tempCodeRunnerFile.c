@@ -1,0 +1,2 @@
+
+sumArr(arr,n); 
