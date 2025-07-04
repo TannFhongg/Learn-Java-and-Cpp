@@ -17,10 +17,8 @@ int main() {
 
     
 
-    struct myArray *ptr; 
-    ptr = malloc(
-        sizeof(struct myArray) + n * ( sizeof(int))
-    ); 
+    struct myArray *ptr = malloc(sizeof(struct myArray) + n * sizeof(int)); 
+
     if(ptr = NULL) {
         printf("Khong the cap phat bo nho"); 
         return 1; 
