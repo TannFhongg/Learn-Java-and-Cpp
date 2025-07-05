@@ -12,10 +12,10 @@ using namespace std;
 class Print {
 public:
     void show(int x) {
-        cout << "Số nguyên: " << x << endl;
+        cout << "So nguyen: " << x << endl;
     }
     void show(string s) {
-        cout << "Chuỗi: " << s << endl;
+        cout << "Chuoi: " << s << endl;
     }
 };
 
@@ -59,6 +59,10 @@ public:
 };
 
 int main() {
+
+Print p;
+p.show(5); 
+p.show("Hello ,world "); 
 Animal* a = new Dog(); 
 makeSound(a) ; // a ->sound(); 
 
