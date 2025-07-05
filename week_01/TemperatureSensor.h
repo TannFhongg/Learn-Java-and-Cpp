@@ -21,8 +21,8 @@ public:
     }
 
     void display() const override {
-        std::cout << name << ": " << temperature << " °C";
-        if (isAlert()) std::cout << " Quá nhiệt!";
+        std::cout << name << ": " << temperature << " C";
+        if (isAlert()) std::cout << " Qua Nhiet Do!";
         std::cout << '\n';
     }
 

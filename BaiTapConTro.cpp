@@ -104,7 +104,7 @@ int main() {
     inMang(arr, n);
 
     cout << "So lon nhat: " << timMax(arr, n) << endl;
-    cout << "So nho nhat: " << timMin(arr, n) << endl;
+    cout << "So nho nhat: " << timMin2(arr, n) << endl;
     cout << "Trung binh cong: " << tinhTrungBinh(arr, n) << endl;
 
     delete[] arr;

@@ -20,7 +20,7 @@ public:
 
     void display() const override {
         std::cout << name << ": " << pressure << " PSI";
-        if (isAlert()) std::cout << "Áp suất thấp!";
+        if (isAlert()) std::cout << "Ap suat thap!";
         std::cout << '\n';
     }
 
