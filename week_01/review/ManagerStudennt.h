@@ -5,29 +5,27 @@
 #include "Student.h"
 #include <iostream>
 #include <list>
+#include <memory>
 
-class ManagerStudent : public AbstractManager
-{
+class ManagerStudent : public AbstractManager {
 private:
-    std::list<Student*> ls;
+    std::list<std::unique_ptr<Student>> ls;  
 
 public:
-    void addStudent(Student *s) override
-    {
-        ls.push_back(s);
-    }
-    void displayAll() override
-    {
-        for (Student *s : ls)
-        {
+   
+void addStudent(std::unique_ptr<Student> s) {
+    ls.push_back(std::move(s));
+}
+
+   
+    void displayAll() const override {
+        for (const auto& s : ls) {
             s->display();
         }
     }
-    ~ManagerStudent()
-    {
-        for (Student *s : ls)
-            delete s;
-    }
+
+    
+   
 };
 
 #endif // MANAGERSTUDENT_H

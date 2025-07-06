@@ -5,10 +5,11 @@
 #include "HocSinhHocBong.h"
 #include <iostream>
 #include <string>
+#include <memory>
 
 class StudentFactory { 
     public:
-    static Student* createStudent() { 
+     static std::unique_ptr<Student> createStudent() { 
         std::cout << "Nhap id sinh vien:" ; 
         std::string id; 
         getline(std::cin,id); 
@@ -19,14 +20,14 @@ class StudentFactory {
         int age; std::cin >> age; 
         std::cout <<"Nhap gpa cua sinh vien: "; 
         double gpa; std::cin >> gpa; 
-
+        std::cin.ignore(); 
         if(gpa > 3.5) { 
             double tienThuong; 
             std::cout <<"Nhap so tien thuong: " ; std::cin >> tienThuong; std::cin.ignore(); 
-            return new HocSinhHocBong(id, name, age, gpa, tienThuong); 
+            return std::make_unique<HocSinhHocBong>(id, name, age, gpa, tienThuong); 
         }
         else { 
-            return new Student(id,name,age,gpa); 
+            return std::make_unique<Student>(id,name,age,gpa); 
         }
     }
 }; 

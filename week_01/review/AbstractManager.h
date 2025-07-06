@@ -3,11 +3,12 @@
 
 #include <iostream> 
 #include "Student.h"
+#include <memory>
 
 class AbstractManager {
     public:
-     virtual void addStudent(Student* s) = 0; 
-     virtual void displayAll() = 0;
+     virtual void addStudent(std::unique_ptr<Student>(s)) = 0; 
+     virtual void displayAll() const = 0;
      virtual ~AbstractManager() {}
  }; 
 
