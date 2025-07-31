@@ -8,3 +8,20 @@ vd: typedef usigned int unit;
 unit age = 25; tương đương với usinged int age = 25; 
 
 Thường được dùng cho struct, pointer, function pointer,usigned int; 
+
+
+
+Example : 
+
+
+#include <stdio.h>
+
+#define int_pointer int * 
+
+int_pointer chalk,chesee; // same int *chalk,chesse; 
+
+#typedef char* char_pointer 
+
+char_pointer benly,Rolls_Roys; //same char *benly,Rolls_Roys; 
+
+Trong C, typedef hay #define thay thế tên kiểu theo từng biến, chứ không mở rộng ra toàn bộ danh sách khai báo.
