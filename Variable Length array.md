@@ -1,10 +1,10 @@
-Variable Length array 
+Variable Length Array 
 
 là mảng có kích thước được xác định tại thời điểm chạy (run time) chứu không phải thời điểm biên dịch(compile time) 
 
-Khâc với mảng thông thường,VLA cho phép khai báo kích thước của mảng phụ thuộc vào  BIẾN 
+Khác với mảng thông thường,VLA cho phép khai báo kích thước của mảng phụ thuộc vào BIẾN 
 
-=> không dùng mảng này như  BIẾN TOÀN CỤC hoặc với static 
+=> không dùng mảng này như BIẾN TOÀN CỤC (Global) hoặc với static 
 
 cú pháp khai báo : 
 

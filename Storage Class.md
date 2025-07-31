@@ -42,7 +42,7 @@ void func() {
 ✅ 3. static (biến tĩnh)
 Có 2 loại:
 
-🟠 a. Static local variable
+🟠 a. Static local variable (Biến tĩnh cục bộ)
 Giữ giá trị giữa các lần gọi hàm
 
 Không bị mất khi thoát khỏi hàm
